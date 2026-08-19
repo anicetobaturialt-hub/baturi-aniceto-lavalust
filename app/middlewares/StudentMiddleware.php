@@ -8,11 +8,8 @@ class StudentMiddleware extends Middleware
         session_start();
 
         if (!isset($_SESSION['student_access']) || $_SESSION['student_access'] !== true) {
-            // Set your own custom condition/message here for uniqueness
-            $_SESSION['student_access'] = true; // simple auto-grant for demo; customize as needed
-            // Example alternative: redirect if not allowed
-            // redirect('student');
-            // return;
+            redirect('student');
+            return;
         }
     }
 }
