@@ -59,7 +59,7 @@
       <p><span class="label">Email</span> <?= $email ?></p>
     </div>
     <a href="<?= site_url('student') ?>" class="btn btn-home">Home</a>
-    <a href="<?= site_url('student/logout') ?>" class="btn btn-logout">Log Out</a>
+    <a href="<?= site_url('student/toggle') ?>" class="btn btn-logout">Log Out</a>
   </div>
 </body>
 </html>
