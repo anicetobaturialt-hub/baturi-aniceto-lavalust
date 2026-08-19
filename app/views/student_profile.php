@@ -4,67 +4,62 @@
 <meta charset="UTF-8">
 <title>Student Profile</title>
 <style>
+  * { box-sizing: border-box; }
   body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    color: #e2e8f0;
   }
   .box {
-    background: #fff;
-    padding: 30px 40px;
+    background: #1e293b;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    width: 340px;
+    border: 1px solid #334155;
+  }
+  h1 { margin-top: 0; font-size: 22px; color: #f8fafc; text-align: center; margin-bottom: 20px; }
+  .info { background: #0f172a; border-radius: 10px; padding: 15px 18px; margin-bottom: 20px; }
+  .info p { margin: 8px 0; font-size: 14px; color: #cbd5e1; display: flex; justify-content: space-between; }
+  .info span.label { color: #64748b; font-weight: 600; }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    width: 320px;
-  }
-  h1 {
-    margin-top: 0;
-    font-size: 22px;
-    color: #333;
-    text-align: center;
-  }
-  .info p {
-    margin: 6px 0;
-    color: #444;
-    font-size: 14px;
-  }
-  .info span {
-    font-weight: bold;
-    color: #222;
-  }
-  .nav {
-    margin-top: 20px;
-    text-align: center;
-  }
-  .nav a {
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
     text-decoration: none;
-    color: #2b6cb0;
-    font-weight: bold;
-    margin-right: 10px;
+    text-align: center;
+    transition: 0.2s ease;
   }
-  .nav a:hover {
-    text-decoration: underline;
-  }
+  .btn-home { background: #3b82f6; color: #eff6ff; }
+  .btn-home:hover { background: #2563eb; }
+  .btn-logout { background: #ef4444; color: #450a0a; }
+  .btn-logout:hover { background: #dc2626; }
 </style>
 </head>
 <body>
   <div class="box">
     <h1>Student Information</h1>
     <div class="info">
-      <p><span>Student ID:</span> <?= $student_id ?></p>
-      <p><span>Name:</span> <?= $name ?></p>
-      <p><span>Course:</span> <?= $course ?></p>
-      <p><span>Year Level:</span> <?= $year ?></p>
-      <p><span>Section:</span> <?= $section ?></p>
-      <p><span>Email:</span> <?= $email ?></p>
+      <p><span class="label">Student ID</span> <?= $student_id ?></p>
+      <p><span class="label">Name</span> <?= $name ?></p>
+      <p><span class="label">Course</span> <?= $course ?></p>
+      <p><span class="label">Year Level</span> <?= $year ?></p>
+      <p><span class="label">Section</span> <?= $section ?></p>
+      <p><span class="label">Email</span> <?= $email ?></p>
     </div>
-    <div class="nav">
-      <a href="<?= site_url('student') ?>">Home</a>
-      <a href="<?= site_url('student/profile') ?>">Student Profile</a>
-    </div>
+    <a href="<?= site_url('student') ?>" class="btn btn-home">Home</a>
+    <a href="<?= site_url('student/logout') ?>" class="btn btn-logout">Log Out</a>
   </div>
 </body>
 </html>
