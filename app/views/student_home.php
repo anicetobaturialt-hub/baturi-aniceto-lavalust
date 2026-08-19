@@ -67,6 +67,8 @@
     <h1><?= $title ?? 'Student Home' ?></h1>
     <p class="sub">Welcome to the Student Information System.</p>
 
+    <?php $logged_in = $logged_in ?? false; ?>
+
     <?php if ($logged_in): ?>
       <span class="status online">● Logged In</span>
     <?php else: ?>
